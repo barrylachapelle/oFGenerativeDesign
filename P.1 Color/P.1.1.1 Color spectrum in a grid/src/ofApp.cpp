@@ -1,7 +1,12 @@
 #include "ofApp.h"
 
+int stepX;
+int stepY;
+
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
+    ofBackground(0);
 
 }
 
@@ -13,16 +18,25 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    //bg color
-    ofColor bgcolor = ofColor(0);
-    bgcolor.setHsb(ofMap(mouseY, 0, 720, 0, 255), 175, 175);
-    ofBackground(bgcolor);
     
-    //square
-    ofColor sqcolor = ofColor(0);
-    sqcolor.setHsb(ofMap(mouseY, 0, 720, 255, 0), 175, 175);
-    ofSetColor(sqcolor);
-    ofDrawRectangle(ofGetWidth()/2-mouseX/2, ofGetHeight()/2-mouseX/2, mouseX, mouseX);
+    if(mouseX > 0 && mouseX < ofGetWidth() && mouseY < ofGetHeight() && mouseY > 0 ){
+    
+        stepX = mouseX + 2;
+        stepY = mouseY + 2;
+        
+        for(int gridY = 0; gridY < ofGetHeight() + stepY; gridY+=stepY){
+            for(int gridX = 0; gridX < ofGetWidth(); gridX+=stepX){
+                
+                ofColor rectcolor = ofColor(0);
+                rectcolor.setHsb(ofMap(gridX, 0, ofGetWidth(), 0, 255), ofMap(gridY, 0, ofGetHeight(), 0, 255), 175);
+                ofSetColor(rectcolor);
+                ofDrawRectangle(gridX, gridY-mouseY, stepX, stepY);
+                
+            }
+        }
+        
+    }
+
     
 }
 

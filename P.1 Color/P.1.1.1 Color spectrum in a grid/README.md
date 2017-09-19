@@ -1,4 +1,4 @@
-# P.1.1.1 Color spectrum in agrid
+# P.1.1.1 Color spectrum in a grid
 
 ### Installing
 

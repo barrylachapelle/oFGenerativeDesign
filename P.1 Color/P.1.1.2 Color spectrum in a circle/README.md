@@ -5,7 +5,7 @@
 1. Create a new oF project using projectgenerator. 
 2. Replace src folder with repo /src.
 
-### Processing > oF Translation Notes
+### Notes
 
 Used [ofDrawTriangle](http://openframeworks.cc/documentation/graphics/ofGraphics/#show_ofDrawTriangle) instead of beginShape/endShape as a best practice measure allowing for more flexibility.
 

@@ -7,9 +7,13 @@
 
 ### Notes
 key "1" - show original
+
 key "2" - sort pixels hsb
+
 key "3" - sort pixels hue
+
 key "4" - sort pixels saturation
+
 key "5" - sort pixels brightness
 
 ![project screenshot](https://raw.githubusercontent.com/barrylachapelle/oFGenerativeDesign/master/img/p122/1.png)

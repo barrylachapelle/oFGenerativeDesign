@@ -13,9 +13,6 @@ int tileHeight;
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    //white bg
-    ofBackground(255);
-    
     // init with random values
     for (int i=0; i < tileCountX; i++) {
         hueValues.push_back(ofRandom(0,360));
@@ -35,6 +32,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
+    //white bg
+    ofBackground(255);
 
     
     int i = 0;
@@ -69,7 +69,7 @@ void ofApp::keyPressed(int key){
                 brightnessValues.erase(brightnessValues.begin() + i);
                 
                 //set new vals
-                hueValues.push_back(ofRandom(0,360));
+                hueValues.push_back(ofRandom(0,255));
                 saturationValues.push_back(ofRandom(0,100));
                 brightnessValues.push_back(ofRandom(0,100));
             }
@@ -83,7 +83,7 @@ void ofApp::keyPressed(int key){
                 brightnessValues.erase(brightnessValues.begin() + i);
                 
                 //set new vals
-                hueValues.push_back(ofRandom(0,360));
+                hueValues.push_back(ofRandom(0,255));
                 saturationValues.push_back(ofRandom(0,100));
                 brightnessValues.push_back(100);
             }
@@ -97,7 +97,7 @@ void ofApp::keyPressed(int key){
                 brightnessValues.erase(brightnessValues.begin() + i);
                 
                 //set new vals
-                hueValues.push_back(ofRandom(0,360));
+                hueValues.push_back(ofRandom(0,255));
                 saturationValues.push_back(100);
                 brightnessValues.push_back(ofRandom(0,100));
             }

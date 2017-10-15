@@ -32,10 +32,10 @@ void ofApp::draw(){
     
     line.clear();
     
-    ofColor color = ofColor(240);
+    ofColor color = ofColor(250);
     ofSetColor(color);
     
-    circleResolution = ofMap(mouseY, 0, ofGetHeight(), 0, 40);
+    circleResolution = ofMap(mouseY, 0, ofGetHeight(), 0, 80);
     radius = mouseX-ofGetWidth()/2 + 0.5;
     angle = TWO_PI/circleResolution;
     
@@ -53,7 +53,7 @@ void ofApp::draw(){
             line.moveTo(ofGetWidth()/2,ofGetHeight()/2);
             line.lineTo(x + ofGetWidth()/2 , y + ofGetHeight()/2);
             line.setStrokeColor(ofColor::black);
-            line.setStrokeWidth(20);
+            line.setStrokeWidth(ofMap(mouseY, 0, ofGetHeight(), 1, 20));
             line.draw();
             
         }

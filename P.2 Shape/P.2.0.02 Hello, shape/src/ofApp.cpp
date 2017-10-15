@@ -1,47 +1,49 @@
 #include "ofApp.h"
 
-
-
 ofPath line;
-int circleResolution;
-
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    ofBackground(255);
+    //white bg
+    ofBackground(ofColor::royalBlue);
+    
+    //no bg refresh
+    ofSetBackgroundAuto(false);
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
     line.clear();
-    
-    ofColor color = ofColor(250);
-    ofSetColor(color);
-    
-    circleResolution = ofMap(mouseY, 0, ofGetHeight(), 3, 60);
+
+    int circleResolution = ofMap(mouseY, 0, ofGetHeight(), 3, 12);
     float radius = mouseX-ofGetWidth()/2 + 0.5;
     float angle = TWO_PI/circleResolution;
     
     ofSetCircleResolution(circleResolution);
     //ofDrawCircle(ofGetWidth()/2,ofGetHeight()/2, 350);
     
-    for(int i = 0; i < circleResolution; i++){
-       
-        float x = cos(angle*i) * radius;
-        float y = sin(angle*i) * radius;
-        
-        line.moveTo(ofGetWidth()/2,ofGetHeight()/2);
-        line.lineTo(x + ofGetWidth()/2 , y + ofGetHeight()/2);
-        line.setStrokeColor(ofColor::black);
-        line.setStrokeWidth(ofMap(mouseY, 0, ofGetHeight(), 1, 20));
-        line.draw();
+    for(int i = 0; i < circleResolution + 1; i++){
+
+        //if(circleResolution > 2){
+            
+            float x = cos(angle*i) * radius;
+            float y = sin(angle*i) * radius;
+            
+            line.lineTo(x + ofGetWidth()/2 , y + ofGetHeight()/2);
+            line.setFilled(false);
+            line.setStrokeColor(ofColor::peachPuff);
+            line.setStrokeWidth(ofMap(mouseY, 0, ofGetHeight(), 0.2, 0.8));
+            line.draw();
+            
+        //}
         
     }
 
@@ -50,10 +52,11 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
-    
     switch(key){
             
         case '1':
+            line.clear();
+            ofBackground(ofColor::royalBlue);
             break;
         case '2':
             break;

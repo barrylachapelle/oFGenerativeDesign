@@ -6,8 +6,5 @@
 
 ![project screenshot](https://raw.githubusercontent.com/barrylachapelle/oFGenerativeDesign/master/img/p2001/1.png)
 
-![project screenshot](https://raw.githubusercontent.com/barrylachapelle/oFGenerativeDesign/master/img/p2001/2.png)
-
-![project screenshot](https://raw.githubusercontent.com/barrylachapelle/oFGenerativeDesign/master/img/p2001/3.png)
 
 
